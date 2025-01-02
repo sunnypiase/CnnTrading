@@ -15,8 +15,7 @@ def create_sequences(df, input_window=500, output_window=60, step=60):
         y (np.ndarray): Output sequences of shape (num_samples, output_window, num_features).
     """
     # Flip to ascending inside this function for correct sequence ordering
-    df_asc = df.iloc[::-1]
-    data = df_asc.values  # Convert to NumPy array (oldest -> newest)
+    data = df.values  # Convert to NumPy array (oldest -> newest)
 
     num_features = data.shape[1]
     total_length = input_window + output_window

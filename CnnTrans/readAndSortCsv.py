@@ -28,7 +28,7 @@ def read_and_sort_csv(file_path, required_columns):
     df.set_index('date', inplace=True)
     
     # Sort the DataFrame by the datetime index in DESCENDING order (newest first)
-    df.sort_index(ascending=False, inplace=True)
+    df.sort_index(ascending=True, inplace=True)
     
     # Remove duplicate indices if any
     df = df[~df.index.duplicated(keep='first')]
